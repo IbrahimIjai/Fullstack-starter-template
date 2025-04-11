@@ -1,69 +1,112 @@
-# Turborepo + Shadcn UI + TailwindCSS v4 + Next.js Boilerplate
+# Turborepo Fullstack Starter Template
 
-A latest, fully configured boilerplate for building applications with Turborepo, Shadcn UI, TailwindCSS v4, and Next.js.
+![License](https://img.shields.io/github/license/IbrahimIjai/Fullstack-starter-template)
+![GitHub stars](https://img.shields.io/github/stars/IbrahimIjai/Fullstack-starter-template?style=social)
 
-## Overview
+A modern, fully-featured starter template for building full-stack applications with React, React Native, Node.js, and more, all powered by Turborepo for efficient monorepo management.
 
-I created this setup to share after completing the migration process from TailwindCSS v3 to v4 in a monorepo structure, as I found it difficult to find documentation on this. It offers a ready-to-use configuration with Turborepo, TailwindCSS v4, Shadcn UI, and Next.js.
+## Features
+
+- 📱 **Cross-platform**: Web (Next.js) + Mobile (React Native) + Backend (Express)
+- 🎨 **UI Components**: Shadcn UI components for web, customizable UI package for mobile
+- 🔄 **Code Sharing**: Share types, hooks, and business logic across platforms
+- 🛠️ **Type Safety**: End-to-end TypeScript
+- 📦 **Monorepo Setup**: Optimized with Turborepo and pNPM
+- 🚀 **Ready-to-use workflows**: Production-ready setup
+
+## Stack
+
+- **Package Manager**: pNPM
+- **Build System**: Turborepo
+- **Web**: Next.js with Tailwind CSS
+- **Mobile**: React Native
+- **Backend**: Express.js
+- **UI**: Shadcn UI components
+- **Database**: Shared database package
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 22 or later
+- pNPM 9 or later
+
+### Installation
+
 ```bash
 # Clone the repository
-git clone https://github.com/bytaesu/turborepo-shadcn-tailwind-v4.git
+git clone https://github.com/your-username/Fullstack-starter-template.git
+cd Fullstack-starter-template
 
 # Install dependencies
 pnpm install
 
-# Run the development server
-turbo dev --filter nextjs
+# Start development servers
+pnpm dev
 ```
 
-OR
-
-Use this button:
-
-[<img width="170" alt="img" src="https://github.com/user-attachments/assets/41c60816-2cd9-4f1f-946d-e29bb6fb15e9" />](https://github.com/new?template_name=turborepo-shadcn-tailwind-v4&template_owner=bytaesu)
-
-## Boilerplate Structure
+### Project Structure
 
 ```
-.
-├── apps
-│   └── nextjs                # Next.js application
-│       ├── src
-│       │   ├── app
-│       │   │   └── globals.css # Critical configuration here
-│       │   └── ...
-│       └── ...
-├── packages
-│   ├── eslint-config         # ESLint configuration
-│   ├── typescript-config     # TypeScript configuration
-│   ├── ui                    # Internal UI package (including shadcn)
-│       ├── src
-│       │    ├── components    # components
-│       │    ├── hooks         # hooks
-│       │    ├── lib           # lib
-│       │    └── styles        # CSS and styling files
-│       │── components.json  # Shadcn CLI configuration
-│       └── ...
-│   └── ...
-└── ...
+├── apps/
+│   ├── web/               # Next.js web application
+│   ├── mobile/            # React Native application
+│   └── server/            # Express backend
+├── packages/
+│   ├── ui/                # Shared UI components
+│   ├── database/          # Database models and utilities
+│   ├── eslint-config/     # Shared ESLint configuration
+│   └── typescript-config/ # Shared TypeScript configuration
 ```
 
-## Critical Configuration
+## Development
 
-[> Tailwind CSS docs](https://tailwindcss.com/docs/detecting-classes-in-source-files)
+### Running Apps
 
-The most important part of this setup is the `/src/app/globals.css` file in the Next.js application. Proper configuration of the `@source` directive is essential for the UI package to work correctly:
+```bash
+# Run all apps and packages
+pnpm dev
 
-```css
-@import 'tailwindcss';
-@import '@repo/ui/styles/default.css';
-
-@source '../../node_modules/@repo/ui';
+# Run specific app
+pnpm --filter web dev
+pnpm --filter mobile dev
+pnpm --filter server dev
 ```
+
+### Building
+
+```bash
+# Build all apps and packages
+pnpm build
+
+# Build specific app
+pnpm --filter web build
+```
+
+## Roadmap & TODOs
+
+- [ ] **Authentication**: Implement PassportJS authentication for both web and mobile apps
+- [ ] **Mobile UI Package**: Create unified UI component library for React Native
+- [ ] **Hooks Package**: Add shared React hooks library
+- [ ] **State Management**: Implement shared state management solution
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Turborepo](https://turbo.build/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Next.js](https://nextjs.org/)
+- [React Native](https://reactnative.dev/)
